@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 from torch.utils.cpp_extension import CppExtension, BuildExtension, CUDAExtension
 
 from distutils.command.build import build
@@ -45,7 +45,7 @@ class custom_develop(develop):
         super().run()
 
 setup(name='gln',
-      py_modules=['gln'],
+      packages=find_packages(),
       ext_modules=ext_modules,
       install_requires=[
           'torch',
